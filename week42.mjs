@@ -89,13 +89,27 @@ const ALPHABET = "abcdefghijklmnopqrstuvwxyz"
 const message = "ckrr jutk"
 let shift = 6
 
-function deChipheredMessage(message, alphabet, shift) {
-    let decryptedMessage = "";
-    for (let i = 0; i < message.length; i++) {
-        
-        
+function deCipherMessage(message, alphabet, shift) {
+  let decryptedMessage = "";
+  for (let i = 0; i < message.length; i++) {
+    const char = message[i];
+    if (char === " ") {
+      decryptedMessage += char;
+      continue;
     }
+    let charIndex = alphabet.indexOf(char.toLowerCase());
+    if (charIndex === -1) {
+      decryptedMessage += char;
+      continue;
+    }
+    charIndex = (charIndex - shift + alphabet.length) % alphabet.length;
+    decryptedMessage += alphabet[charIndex];
+  }
+  return decryptedMessage;
 }
+
+const dechipheredWord = deCipherMessage(message, ALPHABET, shift);
+console.log(dechipheredWord);
 /* -----------------------------------------------------------------------------
     Task: D
 
@@ -113,6 +127,18 @@ console.log("Task: D");
 
 const numbers = [1, 23, 14, 56, 42, 33, 0, 3];
 const target = 36;
+
+function findTwoNumbers(numbers, target) {
+    for (let i = 0; i < numbers.length; i++) {
+      for (let j = i + 1; j < numbers.length; j++) {
+        if (numbers[i] + numbers[j] == target) {
+          return [numbers[i], numbers[j]];
+        }
+      }
+    }
+  }
+  console.log(findTwoNumbers(numbers, target));
+
 
 
 
