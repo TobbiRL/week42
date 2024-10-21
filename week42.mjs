@@ -50,7 +50,8 @@ console.log(limitArray(5, 10));
 */
 console.log("Task: B");
 
-
+console.log(limitArray(5, 11));
+console.log(limitArray(8, 23));
 
 /* -----------------------------------------------------------------------------
     Task: C
