@@ -89,6 +89,13 @@ const ALPHABET = "abcdefghijklmnopqrstuvwxyz"
 const message = "ckrr jutk"
 let shift = 6
 
+function deChipheredMessage(message, alphabet, shift) {
+    let decryptedMessage = "";
+    for (let i = 0; i < message.length; i++) {
+        
+        
+    }
+}
 /* -----------------------------------------------------------------------------
     Task: D
 
@@ -112,9 +119,21 @@ const target = 36;
 
 /* -----------------------------------------------------------------------------
     Task: E
-    Create a function that takes a number as inputt and returns the number of digits in that number. 
+    Create a function that takes a number as input and returns the number of digits in that number. 
     123 -> 3
     2 -> 1
     42693 -> 5
 */
 console.log("Task: E");
+function digitsInNumber(number) {
+    let digit = 0;
+    number = number.toString();
+
+    for (let i = 0; i < number.length; i++) {
+        digit++;
+    } return digit
+}
+
+console.log(digitsInNumber(123));
+console.log(digitsInNumber(2));
+console.log(digitsInNumber(42693));
