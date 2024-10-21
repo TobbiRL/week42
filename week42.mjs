@@ -50,8 +50,25 @@ console.log(limitArray(5, 10));
 */
 console.log("Task: B");
 
-console.log(limitArray(5, 11));
-console.log(limitArray(8, 23));
+let arrayOne = limitArray(5, 11);
+let arrayTwo = limitArray(8, 23);
+console.log(arrayOne);
+console.log(arrayTwo);
+
+function combineArray(arrayA, arrayB) {
+    let combinedArray = [];
+    for (let i = 0; i < arrayA.length; i++) {
+        if (arrayA[i] !== arrayB[i])
+        combinedArray.push(arrayA[i]);
+    }
+    for (let i = 0; i < arrayB.length; i++) {
+        if (arrayB[i] !== arrayA[i])
+        combinedArray.push(arrayB[i]);
+    }
+    return combinedArray
+
+}
+console.log(combineArray(arrayOne, arrayTwo));
 
 /* -----------------------------------------------------------------------------
     Task: C
